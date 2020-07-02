@@ -121,13 +121,21 @@ function generateSingleCar(index) {
         draw(cars, DOM.cardsData, "cards")
     })
     tableViewButton.addEventListener("click", function () {
+        // const sunRoofOnHeader = headers[0];
+        // const sunRoof= sunRoofOnHeader.find(item => item.value === 'isSunRoof');
+        // sunRoof.isVisible = checkBox.checked;
+        DOM.whatToDraw = "table"
+        draw(cars, DOM.tableData, "table")
+        draw(headers, DOM.tableHead, "tableHeader", false) 
+         
+    })
+    checkBox.addEventListener("change", function(){
         const sunRoofOnHeader = headers[0];
         const sunRoof= sunRoofOnHeader.find(item => item.value === 'isSunRoof');
         sunRoof.isVisible = checkBox.checked;
         DOM.whatToDraw = "table"
         draw(cars, DOM.tableData, "table")
-        draw(headers, DOM.tableHead, "tableHeader", false) 
-         
+        draw(headers, DOM.tableHead, "tableHeader", false, true) 
     })
 
     searchOperation.addEventListener("keyup", function () {
